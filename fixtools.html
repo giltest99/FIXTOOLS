@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>FIX TOOLS</title>
+	<link rel="stylesheet" href="w3.css">
+	<style>
+		html, body {
+			height: 100%;
+			padding: 0.25%;
+			outline: 0 none;
+		}
+	</style>
+	<script src="fixtools.js"></script>
+</head>
+<body class="w3-row" style="background-color:gainsboro;" onload=init()>
+	
+	<div class="w3-container" style="width:100%;height:75%;margin-bottom:0.7%;">
+		
+		<!-- DIV SOURCE -->
+		<div class="w3-container w3-third" style="height:100%;">
+			<textarea id="source" style="width:100%;height:100%;padding:10px;resize:none;" autofocus>
+			</textarea>
+		</div>
+		
+		<!-- DIV BOUTONS -->
+		<div class="w3-container w3-third" style="height:100%;">
+			<div class="w3-container w3-black" style="text-align:center;">
+				<h3>TRAITEMENT DE LISTES</h3>
+			</div>
+			
+			<div class="w3-container w3-dark-grey w3-half w3-small" style="text-align:left;">
+				<div class="w3-container">
+					<p><strong>&larr;&nbsp;&nbsp;</strong>SOURCE</p>
+				</div>
+			</div>
+			
+			<div class="w3-container w3-dark-grey w3-half w3-small" style="text-align:right;">
+				<div class="w3-container">
+					<p>DESTINATION <strong>&nbsp;&nbsp;&rarr;</strong></p>
+				</div>
+			</div>
+			
+			<div class="w3-container" style="margin-top:15%;margin-bottom:3%;">
+				<input class="w3-btn w3-dark-grey w3-third w3-left" type="button" value="&larr;&nbsp;&nbsp;TRIM" onclick="trimSource()" style="width:30%;margin-right:4.5%;" title="Enlève les espaces avant et après, ainsi que les valeurs nulles">
+				<input class="w3-btn w3-dark-grey w3-third" type="button" value="+ &nbsp;00_" onclick="ajouterPrefixe()" style="width:30%;" title="Ajoute le préfixe 00_ à toutes les valeurs">
+				<input class="w3-btn w3-dark-grey w3-third w3-right" type="button" value="- 00_" onclick="enlevePrefixe()" style="width:30%;" title="Supprime le préfixe 00_ à toutes les valeurs">
+			</div>
+			
+			<div class="w3-container" style="margin-top:6%;margin-bottom:3%;">
+				<input class="w3-btn w3-dark-grey w3-left w3-third" type="button" value="+&nbsp;&nbsp;&nbsp;," onclick="ajouteVirgules()" style="width:30%;margin-right:4.5%;" title="Ajoute des virgules">
+				<input class="w3-btn w3-dark-grey w3-half w3-left" type="button" value="SOMME" onclick="somme()" style="width:30%;margin-right:4.5%;" title="Calcul de la somme des valeurs">
+				<!--<input class="w3-btn w3-dark-grey w3-third" type="button" value="+ &nbsp;&nbsp;'&nbsp;&nbsp;'," onclick="addQuotes()" style="width:30%;" title="Ajoute des simples quotes et virgules">
+				<input class="w3-btn w3-dark-grey w3-right w3-third" type="button" value='+ &nbsp;"&nbsp;&nbsp;",' onclick="addDbleQuotes()" style="width:30%;" title="Ajoute des doubles quotes et virgules">-->
+			</div>
+			
+			<div class="w3-container" style="margin-top:12%;">
+				<input class="w3-btn w3-half w3-left w3-red" type="button" value="EFFACER TOUT" onclick="init()" style="width:48%;" title="Efface toutes les zones de texte">
+				<input class="w3-btn w3-half w3-right w3-red" type="button" value="EFFACER DEST" onclick="effacerDest()" style="width:48%;" title="Efface les deux zones de destination">
+			</div>
+			
+			<div class="w3-container" style="margin-top:9%;">
+				<input class="w3-btn w3-indigo w3-half w3-left" type="button" value="SELECTION&nbsp;&nbsp;&darr;" onclick="selectDest2()" style="width:48%;" title="Sélectionne la zone de sélection du bas">
+				<input class="w3-btn w3-indigo w3-half w3-right" type="button" value="SELECTION&nbsp;&nbsp;&rarr;" onclick="selectDest1()" style="width:48%;" title="Sélectionne la zone de sélection de droite">			
+			</div>
+			
+		</div>
+		
+		<!-- DIV DESTINATION -->
+		<div class="w3-container w3-third" style="height:100%;padding-left:1%;">
+			<textarea id="dest1" style="width:100%;height:100%;padding:10px;resize:none;">
+			</textarea>
+		</div>
+		
+	</div>
+	
+	<!-- DIV CONCATENATION -->
+	<div class="w3-container" style="width:100%;height:23%;">
+	
+		<div class="w3-container" style="width:100%;height:100%;">
+			<textarea id="dest2" style="width:100%;height:100%;padding:10px;resize:none;">
+			</textarea>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
+
